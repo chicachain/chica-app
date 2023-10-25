@@ -1,0 +1,914 @@
+// custom.scss
+// 따로 만든 것, 레이아웃 관련
+// layout
+.container-fluid {
+  padding: 0;
+}
+.container {
+  padding: 0 1.25rem;
+}
+.container-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+.app-container {
+  height: 100%;
+  .app-contents {
+    height: 100%;
+    position: relative;
+    main {
+      height: 1px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 64px 0px 62px 0px;
+      position: relative;
+      &.blank {
+        min-height: 100vh;
+        justify-content: center;
+        padding: 0;
+      }
+    }
+    nav {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 9999;
+      height: 62px;
+      background: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      .nav-item {
+        flex: 1;
+        a {
+          width: 100%;
+          height: 62px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: #6f6f6f;
+          padding: 0;
+          &.active {
+            color: #324294;
+          }
+        }
+      }
+    }
+  }
+}
+.container-custom {
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow-y: scroll;
+  .scroll {
+    padding: 0 1.25rem 1.25rem;
+  }
+  .btn-area.fix-bottom {
+    margin: 0;
+    padding: 1.25rem;
+  }
+  .btn-area.fix-bottom.auth-btnarea {
+    margin: 0;
+    padding: 0;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.container-between {
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: #ffffff;
+  .scroll {
+    padding: 0 1.25rem 1.25rem;
+  }
+  .btn-area.fix-bottom {
+    margin: 0;
+    padding: 1.25rem;
+  }
+  .btn-area.fix-bottom.auth-btnarea {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.scroll {
+  flex: 1;
+  overflow-x: visible;
+  overflow-y: auto;
+}
+// header
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  // background-color: var(--bs-body-bg);
+  z-index: 100;
+  border-bottom: 1px solid #e0e0e0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    #btn-back {
+      width: 64px;
+      height: 64px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('../images/ic_back.png');
+    }
+    #btn-close {
+      width: 64px;
+      height: 64px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url('../images/ic_close.png');
+    }
+    h2 {
+      width: 100%;
+      padding: 0 3rem;
+      font-size: var(--fs-18);
+      font-weight: 700;
+      margin: 0;
+      text-align: center;
+      color: #28282b;
+      position: absolute;
+      font-family: 'GmarketSans';
+      font-weight: 500;
+      top: 22px;
+      left: 0;
+    }
+  }
+  &#user-header {
+    background: var(--bs-gray-opacity);
+    .container {
+      justify-content: space-between;
+      padding: 0 0.5rem;
+      .coin-box {
+        padding: 0.4rem 0.75rem 0.4rem 2rem;
+        line-height: 1;
+        color: var(--bs-dark);
+        border-radius: 2rem;
+        background: var(--bs-white) url('../images/ic_coin.png') no-repeat
+          0.5rem center / 16px auto;
+      }
+      .nav-link {
+        padding: 0.75rem;
+        .btn-icon {
+          &.home {
+            background-image: url('../images/ic_home.png');
+          }
+          &.notice {
+            background-image: url('../images/ic_notice.png');
+          }
+          &.user {
+            background-image: url('../images/ic_mypage.png');
+            border-radius: 100%;
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+// btn
+.btn-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2.5rem;
+  & > * {
+    margin-left: 0.5rem;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &.fix-bottom,
+  &.column {
+    &:not(.flex-row) {
+      flex-direction: column;
+      align-items: stretch;
+      & > * {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0.5rem;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  &.w-100 {
+    & > * {
+      &.btn-lg {
+        flex: 1;
+      }
+    }
+  }
+  &.auth-btnarea {
+    height: 90px;
+    padding: 0;
+    Button {
+      background: transparent;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: bold;
+      height: 90px;
+      background-color: #28282b;
+      border-radius: 0;
+      &:disabled {
+        background-color: #e0e0e7;
+      }
+      &:active {
+        background-color: #161616;
+      }
+      &:focus {
+        background-color: #161616;
+      }
+    }
+  }
+}
+
+.dropdown {
+  flex-shrink: 0;
+  &.more {
+    .dropdown-toggle {
+      min-width: auto;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      background: transparent url('../images/ic_kebab.png') no-repeat center /
+        24px auto;
+      &:focus,
+      &:active {
+        outline: 0;
+        box-shadow: none;
+      }
+    }
+    .dropdown-menu {
+      min-width: 80px;
+      .dropdown-item {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  .form-control {
+    flex: 1;
+    background: #f4f4f4;
+    box-shadow: 0 0 0 1000px #f4f4f4 inset;
+    border: 0;
+    padding: 0.875rem 2rem 0.875rem 0.5rem;
+    border-radius: 6px;
+    color: #161616;
+    &::placeholder {
+      color: #a8a8a8;
+    }
+  }
+  .btn {
+    position: absolute;
+    &.delete-input {
+      right: 20px;
+      border: 0;
+      background: url('../images/ic_delete_black.png') no-repeat center / 24px
+        auto;
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+    }
+    &.search {
+      right: 20px;
+      border: 0;
+      background: url('../images/ic_search_black.png') no-repeat center / 24px
+        auto;
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+// ellipsis
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  width: 100%;
+}
+.ellipsis-line {
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &.line-2 {
+    -webkit-line-clamp: 2 !important;
+  }
+  &.line-4 {
+    -webkit-line-clamp: 4 !important;
+  }
+}
+
+// img-box
+.ratio {
+  flex-shrink: 0;
+  .img-box {
+    width: 100%;
+    height: 100%;
+  }
+  &.ratio-2x3 {
+    --bs-aspect-ratio: 150%;
+  }
+}
+.figure-caption {
+  color: var(--bs-white);
+}
+.img-box {
+  background-color: var(--bs-gray-400);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  &.avatar {
+    border-radius: 100%;
+  }
+  &.has-play-btn {
+    &:after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 32px;
+      border-radius: 100%;
+      position: absolute;
+      top: calc(50% - 16px);
+      left: calc(50% - 16px);
+      background: rgba(255, 255, 255, 0.2) url('../images/ic_play.png')
+        no-repeat center / 18px auto;
+    }
+    &.big {
+      &:after {
+        top: calc(50% - 28px);
+        left: calc(50% - 28px);
+        width: 56px;
+        height: 56px;
+        background-size: 32px auto;
+      }
+    }
+  }
+}
+
+.gray-box {
+  background: var(--bs-bg-gray);
+  padding: 0.75rem 0;
+}
+
+.px-1-25 {
+  padding-right: 1.25rem !important;
+  padding-left: 1.25rem !important;
+}
+.pb-1-25 {
+  padding-bottom: 1.25rem !important;
+}
+// dl-box
+.dl-box {
+  dl {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &.total {
+      margin-top: 1rem;
+      border-top: 1px solid var(--bs-gray-400);
+      padding-top: 1rem;
+      dt,
+      dd {
+        font-size: var(--fs-16);
+        color: var(--bs-white);
+      }
+      dd {
+        font-weight: 600;
+      }
+    }
+    dt {
+      font-size: var(--fs-12);
+      color: var(--bs-secondary);
+      font-weight: 400;
+      flex-shrink: 0;
+      min-width: 60px;
+      text-align: left;
+      flex-shrink: 0;
+    }
+    dd {
+      font-size: var(--fs-12);
+      flex-grow: 1;
+      font-weight: 300;
+      color: var(--bs-white);
+      word-break: break-all;
+      &.ellipsis {
+        max-width: 50%;
+      }
+    }
+  }
+  &.small {
+    dl {
+      margin-top: 0.25rem;
+      dt,
+      dd {
+        font-weight: 300;
+        font-size: var(--fs-10);
+      }
+    }
+  }
+  &.between {
+    dl {
+      justify-content: space-between;
+      dt {
+        min-width: auto;
+      }
+      dd {
+        text-align: right;
+      }
+    }
+  }
+  &.wide-dt {
+    dt {
+      min-width: 80px;
+    }
+  }
+}
+// division-box
+.division-box {
+  > * {
+    padding: 0 0 0 0.65rem;
+    margin: 0 0 0 0.65rem;
+    position: relative;
+    font-size: var(--fs-10);
+    color: var(--bs-secondary);
+    font-weight: 300;
+    &:before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 12px;
+      background: #ffffff;
+      position: absolute;
+      top: calc(50% - 5px);
+      left: 0;
+    }
+    &:first-child {
+      padding-left: 0;
+      margin-left: 0;
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.title-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.25rem 1.5rem;
+  h3 {
+    font-size: var(--fs-14);
+    margin: 0;
+  }
+}
+
+// swiper
+.swiper-wrap {
+  position: relative;
+  width: 100%;
+  .swiper-box {
+    height: 100%;
+    .swiper-slide {
+    }
+  }
+}
+.swiper-navigation {
+  z-index: 2;
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin-top: -5rem;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center;
+    &:after {
+      display: none;
+    }
+  }
+  .swiper-button-prev {
+    left: 1rem;
+    background-image: url('../images/ic_prev.png');
+  }
+  .swiper-button-next {
+    right: 1rem;
+    background-image: url('../images/ic_next.png');
+  }
+}
+
+.circle-list {
+  li {
+    padding-left: 0.75rem;
+    margin-top: 0.15rem;
+    position: relative;
+    color: var(--bs-gray);
+    font-size: var(--fs-10);
+    font-weight: 300;
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 3px;
+      border-radius: 100%;
+      background: var(--bs-gray-500);
+      position: absolute;
+      top: 8px;
+      left: 0;
+    }
+  }
+}
+
+// date picker calendar
+.react-datepicker.custom-calendar {
+  // background: yellow;
+  font-family: var(--bs-body-font-family);
+  font-size: var(--fs-16);
+  color: var(--bs-dark);
+  border-radius: 1rem;
+  overflow: hidden;
+  // 화살표
+  .react-datepicker__navigation {
+    top: 1rem;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center;
+    span {
+      display: none;
+    }
+    &.react-datepicker__navigation--previous {
+      left: inherit;
+      right: 13rem;
+      background-image: url('../images/ic_prev.png');
+    }
+    &.react-datepicker__navigation--next {
+      right: 11rem;
+      background-image: url('../images/ic_next.png');
+    }
+  }
+  // 달력
+  .react-datepicker__month-container {
+    // 상단
+    .react-datepicker__header {
+      background: transparent;
+      padding: 1rem 1rem 0;
+      border: 0;
+    }
+    .react-datepicker__current-month {
+      padding: 0 1rem;
+    }
+    .react-datepicker__current-month,
+    .react-datepicker-time__header,
+    .react-datepicker-year-header {
+      color: var(--bs-dark);
+      font-size: var(--fs-20);
+      font-weight: 700;
+      text-align: left;
+    }
+    .react-datepicker__day-names {
+      padding: 0.5rem 0;
+      .react-datepicker__day-name {
+        color: var(--bs-gray-500);
+        font-size: var(--fs-12);
+        font-weight: 700;
+      }
+    }
+    .react-datepicker__day-name,
+    .react-datepicker__day,
+    .react-datepicker__time-name {
+      width: 2.5rem;
+      line-height: 2.5rem;
+      margin: 0.15rem 0.25rem;
+    }
+    // 하단
+    .react-datepicker__day,
+    .react-datepicker__time-name {
+      color: var(--bs-dark);
+      font-size: var(--fs-16);
+      font-weight: 600;
+    }
+    .react-datepicker__month {
+      margin: 0 1rem 1rem;
+      .react-datepicker__day--outside-month {
+        color: var(--bs-gray-800);
+      }
+      .react-datepicker__day--selected,
+      .react-datepicker__day--in-selecting-range,
+      .react-datepicker__day--in-range,
+      .react-datepicker__month-text--selected,
+      .react-datepicker__month-text--in-selecting-range,
+      .react-datepicker__month-text--in-range,
+      .react-datepicker__quarter-text--selected,
+      .react-datepicker__quarter-text--in-selecting-range,
+      .react-datepicker__quarter-text--in-range,
+      .react-datepicker__year-text--selected,
+      .react-datepicker__year-text--in-selecting-range,
+      .react-datepicker__year-text--in-range {
+        background: var(--bs-dark);
+        color: var(--bs-white);
+      }
+    }
+  }
+  // 시간
+  .react-datepicker__time-container {
+    width: 160px;
+    border-left: 1px solid var(--bs-gray-800);
+    .react-datepicker__header--time {
+      padding: 1rem;
+      border-bottom: 1px solid var(--bs-gray-800);
+      .react-datepicker-time__header {
+        font-size: var(--fs-16);
+      }
+    }
+    .react-datepicker__time {
+      .react-datepicker__time-box {
+        width: 100%;
+        ul.react-datepicker__time-list {
+          li.react-datepicker__time-list-item {
+            padding: 0.5rem;
+            height: auto;
+            &.react-datepicker__time-list-item--selected {
+              background-color: var(--bs-dark);
+            }
+          }
+        }
+      }
+    }
+  }
+  .react-datepicker__input-time-container {
+    width: 100%;
+    margin: 0;
+    float: inherit;
+    .react-datepicker-time__caption {
+      display: none;
+    }
+    .react-datepicker-time__input-container {
+      display: block;
+      div.react-datepicker-time__input {
+        margin: 0;
+        width: 100%;
+        display: block;
+        padding: 1rem;
+        input.react-datepicker-time__input {
+          margin: 0;
+          width: 100%;
+          padding: 0.65rem 1rem;
+          line-height: 1.5;
+          border-radius: 8px;
+          border: 1px solid var(--bs-gray-700);
+          font-size: var(--fs-16);
+          font-weight: 500;
+          color: var(--bs-dark);
+          position: relative;
+          &::-webkit-calendar-picker-indicator {
+            background: green;
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// no data
+.no-data {
+  font-size: var(--fs-14);
+  font-weight: 400;
+  text-align: center;
+  color: var(--bs-gray);
+  margin: 0;
+}
+
+// border-bottom
+.bottom-line {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+// judge
+.judge-figure {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .ratio {
+    width: 40px;
+  }
+  .figure-caption {
+    flex: 1;
+    margin-left: 0.75rem;
+    min-width: 1px;
+    strong {
+      font-size: var(--fs-12);
+      font-weight: 500;
+    }
+    strong,
+    small {
+      display: block;
+      min-width: 1px;
+    }
+  }
+}
+
+.judge-score {
+  flex-shrink: 0;
+  position: relative;
+  width: 80px;
+  height: 16px;
+  background: url('../images/star_empty.png') no-repeat left center / 80px 16px;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    background: url('../images/star_fill.png') no-repeat left center / 80px 16px;
+  }
+  &.big {
+    width: 150px;
+    height: 30px;
+    background-size: 150px 30px;
+    .fill {
+      height: 30px;
+      background-size: 150px 30px;
+    }
+  }
+}
+
+.comment-card {
+  background: var(--bs-bg-gray);
+  padding: 1rem;
+  .card-header {
+    padding: 0 0 1.25rem;
+    border-bottom-color: var(--bs-gray-400);
+    h5 {
+      font-size: var(--fs-14);
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+  }
+  .card-body {
+    padding: 0;
+    .list-group.list-group-flush {
+      border: 0;
+      .list-group-item {
+        border: 0;
+        padding: 0 !important;
+        margin-top: 1.5rem;
+        figure {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          .figure-caption {
+            flex: 1;
+            margin-left: 0.75rem;
+            min-width: 1px;
+            strong {
+              font-weight: 500;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              word-wrap: normal;
+              overflow: hidden;
+              max-width: 100%;
+              display: block;
+            }
+            small {
+              display: block;
+              font-size: var(--fs-10) !important;
+            }
+            .dropdown {
+              margin-right: -8px;
+            }
+          }
+        }
+        p {
+          margin-top: 0.5rem;
+          font-weight: 300;
+        }
+      }
+    }
+    .btn-lg {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.guest-book-card {
+  padding: 1rem 0 0 0;
+  flex: 1;
+  background: transparent;
+  // overflow: hidden;
+  .card-header {
+    padding: 0 1.25rem 1.25rem;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    padding: 0 0;
+    .scroll {
+      padding: 0 1.25rem;
+      .list-group.list-group-flush {
+        border: 0;
+        .list-group-item {
+          border: 0;
+          padding: 1rem !important;
+          margin-bottom: 1rem;
+          background: var(--bs-bg-gray) !important;
+          border-radius: 0.5rem !important;
+          figure {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            .figure-caption {
+              flex: 1;
+              margin-left: 0.75rem;
+              min-width: 1px;
+              strong {
+                font-weight: 500;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                word-wrap: normal;
+                overflow: hidden;
+                max-width: 100%;
+                display: block;
+              }
+              small {
+                display: block;
+                font-size: var(--fs-10) !important;
+              }
+              .dropdown {
+                margin-right: -8px;
+              }
+            }
+          }
+          p {
+            margin-top: 0.5rem;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}
+
+.vjs-menu-button-popup {
+  .vjs-menu {
+    left: inherit;
+    right: 0;
+  }
+}
+
+.pointer{
+  cursor: pointer;
+}

@@ -1,0 +1,1043 @@
+// modal.scss
+.modal {
+  color: #161616;
+  .modal-dialog {
+    &.modal-fullscreen {
+      border-radius: 0;
+      margin: 0;
+      transform: none !important;
+      .modal-content {
+        border-radius: 0;
+        background-color: #ffffff;
+        padding-top: 64px;
+        &:before {
+          display: none;
+        }
+        .modal-body {
+          padding: 0;
+        }
+      }
+    }
+    .modal-content {
+      padding: 0;
+      border: 0;
+      border-radius: 10px;
+      background-color: #ffffff;
+      position: relative;
+      overflow: hidden;
+      padding-top: 10px;
+      &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .modal-header {
+        padding: 1rem;
+        font-weight: 500;
+        border: 0;
+        .modal-title {
+          font-size: var(--fs-16);
+        }
+        .btn-close {
+          border-radius: 8px;
+          background: url('../images/modal_close.png') no-repeat center / 18px
+            auto;
+          opacity: 1 !important;
+          padding: 6px;
+          margin: -6px 0px -6px auto;
+        }
+        &.big-close {
+          width: 100%;
+          height: 64px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 2;
+          .btn-close {
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 0;
+            background: transparent url('../images/ic_close.png') no-repeat
+              center / 24px auto;
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+      .modal-body {
+        padding: 1rem;
+        font-size: var(--fs-14);
+        font-weight: 400;
+      }
+      .modal-footer {
+        border: 0;
+        padding: 0.25rem 1rem;
+        &.btn-area {
+          margin: 0;
+          .btn {
+            &:not(:first-of-type) {
+              margin-left: 1rem;
+            }
+          }
+        }
+        .btn {
+          margin: 0;
+          font-size: var(--fs-14);
+          &.btn-lg {
+            flex: 1;
+            width: 100%;
+            font-size: var(--fs-16);
+            padding: 0.875rem 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+.modal.fade .modal-dialog {
+  transform: translateY(-50%);
+  top: 50%;
+}
+.modal.show .modal-dialog {
+  transform: translateY(-50%);
+  top: 50%;
+}
+//지갑주소추가완료
+#editmodal {
+  .modal-body {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .modal-footer {
+    .modal-btn {
+      background-color: transparent;
+      border: 0;
+      width: 45%;
+      color: #161616;
+    }
+  }
+}
+// 커스텀 모달 ( 메세지, 컨펌 )
+#custom-modal {
+  text-align: center;
+  .modal-content {
+    padding-top: 0;
+    .modal-header {
+      padding: 1rem 1rem 0.5rem 1rem;
+    }
+    .modal-body {
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .default-btn {
+      background-color: transparent;
+      border: 0;
+      width: 100%;
+      color: #161616;
+    }
+    .btn-flex {
+      padding: 0.5rem;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      .cancle-btn {
+        background-color: #ffffff;
+        border: 1px solid #393939;
+        color: #161616;
+        width: 100%;
+      }
+      .check-btn {
+        width: 100%;
+      }
+    }
+  }
+}
+// HTML 모달 ( 약관 )
+#custom-html-modal {
+  .modal-content {
+    padding-top: 0;
+    .modal-header {
+      padding: 1rem 1rem 0.5rem 1rem;
+    }
+    .modal-body {
+      max-height: 400px;
+      overflow: scroll;
+      border-bottom: 1px solid #e0e0e0;
+      border-top: 1px solid #e0e0e0;
+    }
+    .default-btn {
+      background-color: transparent;
+      border: 0;
+      width: 100%;
+      color: #161616;
+    }
+    .btn-flex {
+      padding: 0.5rem;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      .cancle-btn {
+        background-color: #ffffff;
+        border: 1px solid #393939;
+        color: #161616;
+        width: 100%;
+      }
+      .check-btn {
+        width: 100%;
+      }
+    }
+  }
+}
+//이미지삭제모달
+#img-del {
+  .modal-body {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .modal-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .modal-btn {
+      background-color: transparent;
+      border: 0;
+      width: 45%;
+      color: #161616;
+    }
+  }
+}
+//kyc인증
+#kyc-send {
+  .modal-header {
+    padding: 0 1rem 0.5rem 1rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .modal-body {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .btn-flex {
+    padding: 0.5rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    .cancle-btn {
+      background-color: transparent;
+      border: 1px solid #393939;
+      color: #161616;
+      width: 100%;
+    }
+    .check-btn {
+      width: 100%;
+    }
+  }
+}
+#infor-send {
+  .modal-body {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .modal-btn {
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+    color: #161616;
+  }
+}
+#infor-check {
+  .modal-body {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .modal-btn {
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+    color: #161616;
+  }
+}
+// 약관모달
+.modal-terms {
+  .modal-body {
+    h3 {
+      font-size: var(--fs-14);
+      font-weight: 300;
+    }
+    article {
+      background: var(--bs-bg-modal);
+      font-weight: 300;
+      color: var(--bs-gray-800);
+      font-size: var(--fs-12);
+      line-height: 1.6;
+      padding: 1rem;
+      border-radius: 1rem;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+  }
+}
+//로그인변경 모달
+#signin-modal {
+  .modal-body {
+    border-bottom: 1px solid #e0e0e0;
+    .faild-title {
+      font-size: 1.25rem;
+      font-family: 'GmarketSans';
+      color: #28282b;
+      font-weight: 500;
+      text-align: center;
+    }
+    .body-text {
+      text-align: center;
+      font-weight: 400;
+      font-size: 0.875rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .modal-footer {
+    background-color: #e0e0e7;
+    .modal-btn {
+      background: transparent;
+      border: 0;
+      width: 100%;
+      color: #161616;
+    }
+  }
+}
+//패스워드변경 모달
+#pwdnew-modal {
+  .modal-body {
+    border-bottom: 1px solid #e0e0e0;
+    .faild-title {
+      font-size: 1.25rem;
+      font-family: 'GmarketSans';
+      color: #28282b;
+      font-weight: 500;
+      text-align: center;
+    }
+    .body-text {
+      text-align: center;
+      font-weight: 400;
+      font-size: 0.875rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .modal-footer {
+    background-color: #e0e0e7;
+    .modal-btn {
+      background: transparent;
+      border: 0;
+      width: 100%;
+      color: #161616;
+    }
+  }
+}
+//탈퇴하기 모달
+#del-account-modal {
+  width: -webkit-fill-available;
+  position: absolute;
+  top: auto;
+  margin: 16px;
+  bottom: 75px;
+  .modal-content {
+    border: 1px solid #b0b0b9;
+    border-radius: 21px;
+    padding-top: 0;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+    .modal-body {
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      align-items: center;
+      padding: 9px 15px 9px 10px;
+      gap: 8px;
+      .faild-title {
+        font-size: 1.25rem;
+        font-family: 'GmarketSans';
+        color: #28282b;
+        font-weight: 500;
+        text-align: center;
+      }
+      .body-text {
+        font-weight: 400;
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+.del-account-back-drop {
+  opacity: 0 !important;
+}
+#authnumber-modal {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  top: auto;
+  .modal-content {
+    .modal-body {
+      padding: 1rem 0rem;
+      .faild-title {
+        font-size: 1.25rem;
+        font-family: 'GmarketSans';
+        color: #28282b;
+        font-weight: 500;
+        text-align: center;
+      }
+      .body-text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+      }
+      .modal-body-gridline {
+        border-bottom: 1px solid #e0e0e7;
+        Button {
+          background: transparent;
+          width: 100%;
+          height: 60px;
+          color: #28282b;
+          font-weight: bold;
+        }
+      }
+    }
+    .modal-footer {
+      background-color: transparent;
+      height: 28px;
+    }
+  }
+}
+//공유하기 모달
+#share-modal {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  top: auto;
+  .modal-content {
+    .modal-body {
+      padding: 1rem 0rem;
+      .faild-title {
+        font-size: 1.25rem;
+        font-family: 'GmarketSans';
+        color: #28282b;
+        font-weight: 500;
+        text-align: center;
+      }
+      .body-text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+      }
+      .modal-body-gridline {
+        border-bottom: 1px solid #e0e0e7;
+        Button {
+          background: transparent;
+          width: 100%;
+          height: 60px;
+          color: #28282b;
+          font-weight: bold;
+        }
+      }
+    }
+    .modal-footer {
+      background-color: transparent;
+      height: 28px;
+    }
+  }
+}
+//공유하기 모달
+#review-modal {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  top: auto;
+  .modal-content {
+    .modal-body {
+      padding: 1rem 0rem;
+      .faild-title {
+        font-size: 1.25rem;
+        font-family: 'GmarketSans';
+        color: #28282b;
+        font-weight: 500;
+        text-align: center;
+      }
+      .body-text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+      }
+      .modal-body-gridline {
+        border-bottom: 1px solid #e0e0e7;
+        Button {
+          background: transparent;
+          width: 100%;
+          height: 60px;
+          color: #28282b;
+          font-weight: bold;
+        }
+      }
+    }
+    .modal-footer {
+      background-color: transparent;
+      height: 28px;
+    }
+  }
+}
+//글쓰기 선택 모달
+#bas-modal {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  top: auto;
+  .modal-content {
+    .modal-body {
+      overflow-y: auto;
+      padding: 0;
+      height: 50vh;
+      overflow-y: auto;
+      .faild-title {
+        font-size: 1.25rem;
+        font-family: 'GmarketSans';
+        color: #28282b;
+        font-weight: 500;
+        text-align: center;
+      }
+      .body-text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+      }
+      .modal-body-gridline {
+        border-bottom: 1px solid #e0e0e7;
+        Button {
+          background: transparent;
+          width: 100%;
+          height: 60px;
+          color: #28282b;
+          font-weight: bold;
+          &:hover {
+            color: #28282b;
+          }
+          &:active {
+            color: #28282b;
+          }
+          &:focus {
+            color: #28282b;
+          }
+          &.active {
+            color: #28282b;
+          }
+        }
+        .btn.btn-primary[disabled] {
+          opacity: 0.5;
+        }
+      }
+    }
+    .modal-body::-webkit-scrollbar {
+      display: none;
+    }
+    .modal-footer {
+      background-color: transparent;
+      height: 0px;
+      padding: 0;
+    }
+  }
+}
+//댓글 모달
+#comm-modal {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  top: auto;
+  .modal-content {
+    .modal-body {
+      padding: 1rem 0rem;
+      .faild-title {
+        font-size: 1.25rem;
+        font-family: 'GmarketSans';
+        color: #28282b;
+        font-weight: 500;
+        text-align: center;
+      }
+      .body-text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+      }
+      .modal-body-gridline {
+        border-bottom: 1px solid #e0e0e7;
+        Button {
+          background: transparent;
+          width: 100%;
+          height: 60px;
+          color: #28282b;
+          font-weight: bold;
+        }
+      }
+    }
+    .modal-footer {
+      background-color: transparent;
+      height: 28px;
+    }
+  }
+}
+//댓글 모달
+#user-modal {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  top: auto;
+  .modal-content {
+    .modal-body {
+      padding: 1rem 0rem;
+      .faild-title {
+        font-size: 1.25rem;
+        font-family: 'GmarketSans';
+        color: #28282b;
+        font-weight: 500;
+        text-align: center;
+      }
+      .body-text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+      }
+      .modal-body-gridline {
+        border-bottom: 1px solid #e0e0e7;
+        Button {
+          background: transparent;
+          width: 100%;
+          height: 60px;
+          color: #28282b;
+          font-weight: bold;
+        }
+      }
+      .modal-body-profile {
+        border-bottom: 1px solid #e0e0e7;
+        display: grid;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        p {
+          color: #28282b;
+          font-size: 0.875rem;
+          font-weight: bold;
+        }
+        img {
+          width: 70px;
+          height: 70px;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          justify-self: center;
+          border-radius: 50px;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    .modal-footer {
+      background-color: transparent;
+      height: 0;
+    }
+  }
+}
+//글쓰기 모달
+#writer-modal {
+  position: absolute;
+  bottom: 80px;
+  margin-bottom: 40px;
+  left: auto;
+  right: 16px;
+  transform: translateY(0);
+  top: auto;
+  .modal-content {
+    width: 110px;
+    .modal-body {
+      padding: 0rem 1rem;
+      .faild-title {
+        font-size: 1.25rem;
+        font-family: 'GmarketSans';
+        color: #28282b;
+        font-weight: 500;
+        text-align: center;
+      }
+      .body-text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+      }
+      .modal-body-gridline {
+        Button {
+          background: transparent;
+          width: 100%;
+          height: 30px;
+          color: #28282b;
+          padding: 0;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          padding: 1rem 0;
+          gap: 5px;
+          font-size: 0.875rem;
+          font-weight: 400;
+          color: #161616;
+          .material-icons {
+            font-size: 1.125rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .modal-footer {
+      background-color: transparent;
+      height: 10px;
+    }
+  }
+}
+//검색기록 삭제 모달
+#del-modal {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  top: auto;
+  .modal-content {
+    .modal-body {
+      padding: 1rem 0rem;
+      .modal-body-gridline {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        img {
+          justify-self: center;
+        }
+        p {
+          color: #4d4d53;
+          font-size: 1rem;
+          margin: 0.5rem 0;
+        }
+      }
+    }
+    .modal-footer {
+      background-color: transparent;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: 40% 60%;
+      gap: 10px;
+      padding-bottom: 2rem;
+    }
+  }
+}
+//위치 모달
+#place-modal {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: -15px;
+  transform: translateY(-50%);
+  top: auto;
+  .modal-content {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    .modal-body {
+      padding: 1rem;
+      .resultbox {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 1rem;
+        .result-img {
+          height: 90px;
+          width: 90px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .result-info {
+          .info-tag {
+            color: #bd7ebb;
+            font-weight: bold;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: space-between;
+            .material-icons {
+              color: #4d4d53;
+            }
+          }
+          .result-title {
+            color: #28282b;
+            font-size: 1rem;
+            font-weight: bold;
+          }
+          .info-botitlebox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            .reviewstar-box {
+              display: flex;
+              align-items: center;
+              p {
+                color: #4d4d53;
+                font-size: 0.75rem;
+                span {
+                  font-weight: bold;
+                  color: #bd7ebb;
+                }
+              }
+              .center-line {
+                position: relative;
+                margin: 0 0.5rem;
+                &::after {
+                  content: '';
+                  display: block;
+                  width: 1px;
+                  height: 12px;
+                  background: #b0b0b9;
+                  position: absolute;
+                  top: calc(50% - 5px);
+                  left: 0;
+                }
+              }
+            }
+            Button {
+              padding: 0 1rem;
+              height: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.place-modal-back-drop {
+  opacity: 0 !important;
+}
+#edit-day-modal {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  top: auto;
+  .modal-content {
+    .modal-body {
+      padding: 1rem;
+      .day-box {
+        h6 {
+          font-family: 'GmarketSans';
+          font-size: 1.125rem;
+          font-weight: 500;
+          color: #28282b;
+          margin-bottom: 0;
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+        .day-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          gap: 10px;
+          .scroll-height {
+            overflow-y: scroll;
+            height: 102px;
+            p {
+              padding: 0.25rem 1rem;
+              font-family: 'GmarketSans';
+              font-size: 1.125rem;
+              font-weight: 500;
+              color: #b0b0b9;
+            }
+            .scroll-border {
+              border-top: 2px solid #28282b;
+              border-bottom: 2px solid #28282b;
+              color: #28282b;
+            }
+          }
+        }
+      }
+    }
+    .modal-footer {
+      background-color: transparent;
+      padding: 1rem;
+      Button {
+        width: 100%;
+      }
+    }
+  }
+}
+//이용약관 모달
+#terms-modal {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  top: auto;
+  .modal-content {
+    .modal-header {
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 500;
+      font-family: 'GmarketSans';
+    }
+    .modal-body {
+      padding: 1rem 0.5rem;
+      height: 400px;
+      overflow: scroll;
+      .terms-box {
+        margin-bottom: 2rem;
+        .terms-title {
+          font-size: 1rem;
+          font-weight: bold;
+          color: #28282b;
+        }
+        .terms-body {
+          font-size: 0.875rem;
+          color: #4d4d4d;
+        }
+      }
+    }
+    .modal-footer {
+      background-color: transparent;
+      padding: 1rem;
+    }
+  }
+}
+
+#modal-camera {
+  .modal-content {
+    padding: 0;
+    position: relative;
+    .card {
+      z-index: 2;
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      right: 1.25rem;
+      text-align: center;
+      padding: 1rem 0 0;
+      h4 {
+        font-size: var(--fs-16);
+        margin: 0;
+      }
+      p {
+        padding: 2rem 0;
+      }
+    }
+  }
+}
+
+#modal-zoom {
+  .modal-content {
+    &:before {
+      display: none;
+    }
+    .ratio {
+      &.actor {
+        --bs-aspect-ratio: 100%;
+      }
+      &.drama {
+        --bs-aspect-ratio: 150%;
+      }
+      &.video {
+        --bs-aspect-ratio: 56.25%;
+      }
+      .img-box {
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+.upper-modal-backdrop {
+  z-index: 1055;
+}
+@media (min-width: 576px) {
+  .modal-sm {
+    --bs-modal-width: 350px;
+  }
+}
+
+#map-modal {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: -15px;
+  top: auto;
+  transform: translateY(-15%);
+  .modal-content {
+    border-radius: 20px 20px 0 0;
+    .modal-body {
+      padding: 1rem;
+      .resultbox {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 1rem;
+        .info-botitlebox {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          width: max-content;
+          gap: 10px;
+          .result-title {
+            color: #28282b;
+            font-size: 1rem;
+            font-weight: bold;
+          }
+          .map-foot-address {
+            color: #818185;
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+  }
+}

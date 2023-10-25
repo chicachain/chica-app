@@ -1,0 +1,58 @@
+// reset.scss
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Sans:wght@100;300;400;500;700;800&display=swap');
+@import url('//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+@import url('https://webfontworld.github.io/sunn/SUIT.css');
+@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+// BootStrap Root Reset
+$theme-colors: (
+  'primary': #bd7ebb,
+  'primary-dark': #a2a4fa,
+  'primary-darker': #e3e3f8,
+  'dark': #28282b,
+  'dark-opacity': rgba(0, 0, 0, 0.6),
+  'gray-opacity': rgba(23, 23, 23, 0.6),
+  'gray': #818185,
+  'gray-100': #000,
+  'gray-200': #262729,
+  'gray-300': #36363b,
+  'gray-400': #4c4f52,
+  'gray-500': #72767c,
+  'gray-600': #989da5,
+  'gray-700': #bcbfcb,
+  'gray-800': #d4d8df,
+  'gray-900': #eee,
+  'danger': #f94646,
+  'blue': #326bff,
+  'border': #bec5ce,
+  'secondary': #a4a5b6,
+  'white': #f6f6f6,
+  'bg-modal': #2c2c2e,
+  'bg-input': #040404,
+  'bg-gray': #2f2f2f,
+  'bg-disabled': #c6c6c6,
+  'bg-disabled-color': #8d8d8d,
+);
+$font-family-sans-serif: 'Noto Sans KR', sans-serif;
+$body-line-height: 1.6;
+$body-font-size: 16px;
+$body-bg: #171717;
+
+// add
+:root {
+  --fs-10: 0.8rem;
+  --fs-12: 0.875rem;
+  --fs-14: 0.95rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-28: 1.75rem;
+  --fs-32: 2rem;
+  --fs-48: 3rem;
+  --fs-64: 4rem;
+}
+
+[class*=' xi-'],
+[class^='xi-'] {
+  font-size: var(--fs-24);
+}

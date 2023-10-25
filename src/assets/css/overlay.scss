@@ -1,0 +1,72 @@
+.overlayBox {
+    display: inline-flex;
+    padding: 5px 15px 5px 5px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 23px;
+    border: 1px solid var(--Light-Gray, #E0E0E7);
+    background: var(--White, #FFF);
+
+    /* Drop Shadow */
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+    &::after {
+        content: ''; 
+        position: absolute; 
+        right: 50%;
+        top: 48px;
+        border-left: 8px solid transparent; 
+        border-right: 8px solid transparent; 
+        border-top: 10px solid #E0E0E7;
+        z-index: 0;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        right: 50%;
+        top: 47px;
+        border-left: 8px solid transparent; 
+        border-right: 8px solid transparent; 
+        border-top: 10px solid #FFF;
+        z-index: 1;
+    }
+    .imageBox {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        border-radius: 36px;
+        border: 1px solid var(--Light-Gray, #E0E0E7);
+        // background: url(<path-to-image>)lightgray 50% / cover no-repeat;
+    }
+
+    p {
+        color: var(--Dark-Gray, #28282B);
+        font-variant-numeric: lining-nums proportional-nums;
+        font-feature-settings: 'dlig' on;
+        font-family: Noto Sans KR;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+    }
+    &.active {
+        background-color: #4D4D53;
+        border: 1px solid var(--Light-Gray, #4D4D53);
+        p {
+            color: var(--White, #FFF);
+            font-variant-numeric: lining-nums proportional-nums;
+            font-feature-settings: 'dlig' on;
+            /* Noto Sans - B, 15px */
+            font-family: Noto Sans KR;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%; /* 19.5px */
+        }
+        &::before {
+            border-top: 10px solid #4D4D53;
+        }
+        &::after {
+            border-top: 10px solid #4D4D53;
+        }
+    }
+}

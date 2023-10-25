@@ -1,0 +1,3 @@
+src/serviceWorker.js
+src/*.test.js
+config/webpack.config.js
